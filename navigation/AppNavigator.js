@@ -12,8 +12,20 @@ const NavStack = createStackNavigator({
   },
   DetailsScreen: {
     screen: DetailsScreen
-  },
-})
+  }
+},
+{
+    initialRouteName: 'HomeScreen',
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#ff6d41',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
+  })
 
 const AppNavigator = createAppContainer(NavStack);
 

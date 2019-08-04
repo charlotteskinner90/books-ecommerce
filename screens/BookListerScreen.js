@@ -95,10 +95,6 @@ class BookListerScreen extends React.Component {
   
 }
 
-BookListerScreen.navigationOptions = {
-  header: null,
-};
-
 export default withNavigation(BookListerScreen);
 
 const styles = StyleSheet.create({
@@ -112,7 +108,7 @@ const styles = StyleSheet.create({
   },
   welcomeContainer: {
     alignItems: 'center',
-    paddingTop: 80,
+    paddingTop: 20,
     paddingBottom: 60,
     backgroundColor: '#ff6d41',
   },

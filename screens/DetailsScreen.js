@@ -4,7 +4,7 @@ import CustomButton from '../components/CustomButton';
 import data from '../assets/data/data.json';
 import { withNavigation } from 'react-navigation';
 import { NavigationActions } from 'react-navigation';
-
+import { Formik, Field } from 'formik'
 
 class DetailsScreen extends React.Component {
   constructor(props) {
@@ -14,32 +14,43 @@ class DetailsScreen extends React.Component {
 
   render() {
     const { navigation } = this.props;
+    const { navigate } = this.props.navigation;
     const item = navigation.getParam('data');
     return (
-      <View>
-        <View style={styles.welcomeContainer}>
-          <Text style={styles.getStartedText}>{item.name}</Text>
-          <Text style={styles.getStartedText}>Details</Text>
-        </View>
-        <ScrollView>
+      <View style={styles.container}>
+         <ScrollView>
+          <View style={styles.welcomeContainer}>
+            <Text style={styles.getStartedText}>{item.name}</Text>
+            <Text style={styles.getStartedText}>Details</Text>
+          </View>
           <View style={styles.contentContainer}>
             <Image
               style={styles.imageThumbnail}
               source={{uri: item.uri}}
             />
             <Text style={styles.description}>{item.description}</Text>
-            <View style={styles.inputContainer}>
-              <TextInput
-                style={{height: 40, width: 200, textAlign: 'center'}}
-                placeholder="Email Address"
-                onChangeText={(text) => this.setState({text})}
-                value={this.state.text}
-              />
-            </View>
-            <CustomButton
-              buttonText="Add to Cart"
-              onPress={() => {}}
-            />
+            <Formik
+              initialValues={{
+                email: '',
+              }}
+              onSubmit={() => navigate("HomeScreen")}
+            >
+            {({ handleSubmit, dirty}) => (
+              <View style={styles.inputContainer}>
+                <Field
+                  component={TextInput}
+                  style={styles.input}
+                  placeholder="Email Address"
+                  onChangeText={(text) => this.setState({text})}
+                  value={this.state.text}
+                />
+                <CustomButton
+                  buttonText="Add to Cart"
+                  onPress={!dirty && handleSubmit}
+                />
+              </View>
+            )}
+            </Formik>
           </View>
         </ScrollView>
       </View>
@@ -60,7 +71,7 @@ const styles = StyleSheet.create({
   },
   welcomeContainer: {
     alignItems: 'center',
-    paddingTop: 60,
+    paddingTop: 20,
     paddingBottom: 60,
     backgroundColor: '#ff6d41',
   },
@@ -83,4 +94,13 @@ const styles = StyleSheet.create({
     height: 200,
     borderRadius: 4,
   },
+  inputContainer: {
+    alignItems: 'center'
+  },
+  input: {
+    height: 40,
+    width: 200,
+    textAlign: 'center',
+    marginBottom: 10,
+  }
 });
