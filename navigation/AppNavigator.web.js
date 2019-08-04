@@ -1,13 +1,20 @@
-import { createBrowserApp } from '@react-navigation/web';
-import { createSwitchNavigator } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import HomeScreen from '../screens/HomeScreen';
+import BookListerScreen from '../screens/BookListerScreen';
+import DetailsScreen from '../screens/DetailsScreen';
 
-import MainTabNavigator from './MainTabNavigator';
+const NavStack = createStackNavigator({
+  HomeScreen: {
+    screen: HomeScreen
+  },
+  BookListerScreen: {
+    screen: BookListerScreen,
+  },
+  DetailsScreen: {
+    screen: DetailsScreen
+  },
+})
 
-const switchNavigator = createSwitchNavigator({
-  // You could add another route here for authentication.
-  // Read more at https://reactnavigation.org/docs/en/auth-flow.html
-  Main: MainTabNavigator,
-});
-switchNavigator.path = '';
+const AppNavigator = createAppContainer(NavStack);
 
-export default createBrowserApp(switchNavigator, { history: 'hash' });
+export default AppNavigator;

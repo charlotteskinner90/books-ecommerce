@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Little Miss Chatterbox",
+    "uri": "https://www.mrmen.com/wp-content/uploads/2016/06/lmchatterbox-128-1.jpg",
+    "description": "The bright and colourful Mr. Men and Little Miss books star a diverse variety of quirky protagonists, whose dominant personality traits shape their individual stories",
+  },
+  {
+    "id": 2,
+    "name": "Little Miss Sunshine",
+    "uri": "https://www.mrmen.com/wp-content/uploads/2016/06/lmsunshine-128-1.jpg",
+    "description": "The bright and colourful Mr. Men and Little Miss books star a diverse variety of quirky protagonists, whose dominant personality traits shape their individual stories",
+  },
+  {
+    "id": 3,
+    "name": "Little Miss Princess",
+    "uri": "https://www.mrmen.com/wp-content/uploads/2016/06/lmprincess-128-1.jpg",
+    "description": "The bright and colourful Mr. Men and Little Miss books star a diverse variety of quirky protagonists, whose dominant personality traits shape their individual stories",
+  },
+  {
+    "id": 4,
+    "name": "Mr Tickle",
+    "uri": "https://www.mrmen.com/wp-content/uploads/2016/06/mrtickle-128-1.jpg",
+    "description": "The bright and colourful Mr. Men and Little Miss books star a diverse variety of quirky protagonists, whose dominant personality traits shape their individual stories",
+  },
+  {
+    "id": 5,
+    "name": "Mr Messy",
+    "uri": "https://www.mrmen.com/wp-content/uploads/2016/06/mrmessy-128-1.jpg",
+    "description": "The bright and colourful Mr. Men and Little Miss books star a diverse variety of quirky protagonists, whose dominant personality traits shape their individual stories",
+  },
+  {
+    "id": 6,
+    "name": "Mr Clever",
+    "uri": "https://www.mrmen.com/wp-content/uploads/2016/06/mrclever-128-1.jpg",
+    "description": "The bright and colourful Mr. Men and Little Miss books star a diverse variety of quirky protagonists, whose dominant personality traits shape their individual stories",
+  }
+]
