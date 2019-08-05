@@ -20,10 +20,9 @@ class DetailsScreen extends React.Component {
       <View style={styles.container}>
          <ScrollView>
           <View style={styles.welcomeContainer}>
-            <Text style={styles.getStartedText}>{item.name}</Text>
-            <Text style={styles.getStartedText}>Details</Text>
+            <Text style={styles.title}>{item.name}</Text>
           </View>
-          <View style={styles.contentContainer}>
+          <View style={styles.contentContainer} accessible={true} accessibilityLabel="Image of book cover">
             <Image
               style={styles.imageThumbnail}
               source={{uri: item.uri}}
@@ -36,7 +35,7 @@ class DetailsScreen extends React.Component {
               onSubmit={() => navigate("HomeScreen")}
             >
             {({ handleSubmit, dirty}) => (
-              <View style={styles.inputContainer}>
+              <View style={styles.inputContainer} accessible={true} accessibilityLabel="Enter email address and tap button to add to cart">
                 <Field
                   component={TextInput}
                   style={styles.input}
@@ -65,17 +64,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ffffff',
   },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50,
-  },
   welcomeContainer: {
     alignItems: 'center',
     paddingTop: 20,
     paddingBottom: 60,
     backgroundColor: '#ff6d41',
   },
-  getStartedText: {
+  title: {
     fontSize: 30,
     color: '#ffffff',
     lineHeight: 32,
@@ -84,6 +79,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     alignItems: 'center',
     paddingHorizontal: 16,
+    paddingTop: 16,
   },
   description: {
     paddingVertical: 20,

@@ -27,7 +27,11 @@ class BookListerScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
     <View style={styles.container}>
-      <TouchableWithoutFeedback onPress={() => navigate("HomeScreen")}>
+      <TouchableWithoutFeedback
+        onPress={() => navigate("HomeScreen")}
+        accessible={true}
+        accessibilityLabel="Tap to navigate to homepage"
+      >
         <View style={styles.welcomeContainer}>
           <Ionicons
             name={
@@ -38,13 +42,13 @@ class BookListerScreen extends React.Component {
             size={40}
             color={Colors.white}
           />
-          <Text style={styles.title}>Books Now</Text>
+          <Text style={styles.title}>BookWorm</Text>
         </View>
       </TouchableWithoutFeedback>
         <ScrollView
           style={styles.container}
           contentContainerStyle={styles.contentContainer}>
-          <View>
+          <View accessible={true} accessibilityLabel="Tap on card for book details, swipe to view more books">
             <Text style={styles.header}>Little Miss Books</Text>
             <FlatList
               data={data.slice(0, 3)}
@@ -66,7 +70,7 @@ class BookListerScreen extends React.Component {
               }}
             />
           </View>
-          <View>
+          <View accessible={true} accessibilityLabel="Tap on card for book details, swipe to view more books">
             <Text style={styles.header}>Mr Men Books</Text>
             <FlatList
               data={data.slice(3, 6)}
@@ -101,10 +105,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
-  },
-  getStartedContainer: {
-    alignItems: 'center',
-    marginHorizontal: 50,
   },
   welcomeContainer: {
     alignItems: 'center',
